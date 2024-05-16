@@ -1,6 +1,6 @@
 # Hype Text Path
 
-![HypeTextPath|690x387](https://playground.maxziebell.de/Hype/TextPath/HypeTextPath.jpg)
+![HypeTextPath|690x387](https://playground.maxziebell.de/Hype/TextPath/HypeTextPath.jpg?)
 
 A small custom tailored extension to animate text along a path in Tumult Hype.
 
