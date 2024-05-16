@@ -241,7 +241,7 @@ if ("HypeTextPath" in window === false) {
             document.addEventListener('DOMContentLoaded', function () {
                 setTimeout(function () {
                     processTextPath(document.body);
-                }, 500);
+                }, 100);
             });
         }
 
