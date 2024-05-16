@@ -18,6 +18,7 @@
  * 1.1.0 Refactored data attributes and enabled pointer events for text path in IDE
  * 1.1.1 Added cleanup function for existing text paths in IDE
  * 1.1.2 Added global observer for style changes
+ * 1.1.3 Improved cleanup to avoid text duplication and fixed attribute handling
  */
 
 // Ensure the extension isn't redefined
@@ -159,7 +160,7 @@ if ("HypeTextPath" in window === false) {
                         var textPathID = node.dataset.textPath || node.dataset.textContent;
 
                         // Clean up previous associations if attributes are changed
-                        if (mutation.oldValue) {
+                        if (mutation.oldValue && (mutation.attributeName === 'data-text-path' || mutation.attributeName === 'data-text-content')) {
                             cleanupTextPath(sceneElm, mutation.oldValue);
                         }
 
@@ -265,7 +266,7 @@ if ("HypeTextPath" in window === false) {
         }
 
         return {
-            version: '1.1.2'
+            version: '1.1.3'
         };
     })();
 }
