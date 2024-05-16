@@ -21,10 +21,6 @@ The latest version can be linked into your project using the following in the he
 <script src="https://cdn.jsdelivr.net/gh/worldoptimizer/HypeTextPath/HypeTextPath.min.js"></script>
 ```
 
-Optionally, you can also link a specific release or a version with SRI. For more details, visit the [JsDelivr (CDN) page for this extension](https://www.jsdelivr.com/package/gh/worldoptimizer/HypeTextPath).
-
-Learn how to use the latest extension version and how to combine extensions into one file at [HypeCookBook - Including external files and Hype extensions](https://github.com/worldoptimizer/HypeCookBook/wiki/Including-external-files-and-Hype-extensions).
-
 ##### Option B: Download from GitHub
 1. Go to the [Hype TextPath Extension GitHub Repository](https://github.com/worldoptimizer/HypeTextPath).
 2. Download the latest version of `HypeTextPath.js` or `HypeTextPath.min.js`.
