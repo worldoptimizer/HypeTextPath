@@ -15,7 +15,8 @@
  * 1.0.7 Enhanced text updates and improved garbage collection
  * 1.0.8 Added global observer for innerhtml updates
  * 1.0.9 Enhanced global handling of innerhtml updates
- * 1.1.0 Refactored data attributes and disable user select in IDE
+ * 1.1.0 Refactored data attributes and enabled pointer events for text path in IDE
+ * 1.1.1 Added cleanup function for existing text paths in IDE
  */
 
 // Ensure the extension isn't redefined
@@ -28,8 +29,19 @@ if ("HypeTextPath" in window === false) {
         function HypeSceneLoad(hypeDocument, element, event) {
             processTextPath(element);
         }
-        
+
+        function cleanupExistingTextPaths(sceneElm) {
+            var existingTextPaths = sceneElm.querySelectorAll('[data-text-path] textPath');
+            existingTextPaths.forEach(function (textPathElm) {
+                textPathElm.parentElement.removeChild(textPathElm);
+            });
+        }
+
         function processTextPath(sceneElm) {
+            if (_isHypeIDE) {
+                cleanupExistingTextPaths(sceneElm);
+            }
+
             var nElmAll = sceneElm.querySelectorAll('[data-text-path]');
             nElmAll.forEach(function (nElm) {
                 var textPathID = nElm.dataset.textPath;
@@ -77,9 +89,11 @@ if ("HypeTextPath" in window === false) {
             nElm.appendChild(svgtElm);
 
             if (_isHypeIDE) {
+                svgtElm.style.pointerEvents = 'none';
+                svgtElm.style.webkitUserSelect = 'none';
+                svgtpElm.style.pointerEvents = 'none';
                 svgtpElm.style.webkitUserSelect = 'none';
             }
-            
 
             setupMutationObserver(pElm, svgtpElm);
         }
@@ -232,7 +246,7 @@ if ("HypeTextPath" in window === false) {
         }
 
         return {
-            version: '1.1.0'
+            version: '1.1.1'
         };
     })();
 }
