@@ -17,6 +17,7 @@
  * 1.0.9 Enhanced global handling of innerhtml updates
  * 1.1.0 Refactored data attributes and enabled pointer events for text path in IDE
  * 1.1.1 Added cleanup function for existing text paths in IDE
+ * 1.1.2 Added global observer for style changes
  */
 
 // Ensure the extension isn't redefined
@@ -31,7 +32,7 @@ if ("HypeTextPath" in window === false) {
         }
 
         function cleanupExistingTextPaths(sceneElm) {
-            var existingTextPaths = sceneElm.querySelectorAll('[data-text-path] textPath');
+            var existingTextPaths = sceneElm.querySelectorAll('[data-text-path] text');
             existingTextPaths.forEach(function (textPathElm) {
                 textPathElm.parentElement.removeChild(textPathElm);
             });
@@ -63,6 +64,12 @@ if ("HypeTextPath" in window === false) {
             // Check if both elements are present
             if (!tElm || !pElm) {
                 return;
+            }
+
+            // Remove any existing text element to prevent duplication
+            var existingTextElm = nElm.querySelector('text');
+            if (existingTextElm) {
+                existingTextElm.parentElement.removeChild(existingTextElm);
             }
 
             if (!_isHypeIDE) {
@@ -201,6 +208,18 @@ if ("HypeTextPath" in window === false) {
                             updateTextPathContent(sceneElm, node.closest('[data-text-content]'));
                         }
                     }
+
+                    // Update styles on style attribute changes
+                    if (mutation.attributeName === 'style') {
+                        var textPathID = node.closest('[data-text-content]')?.dataset.textContent;
+                        if (textPathID) {
+                            var tElm = node.closest('[data-text-content]');
+                            var svgtElm = sceneElm.querySelector(`[data-text-path="${textPathID}"] text`);
+                            if (tElm && svgtElm) {
+                                transferStyles(tElm, svgtElm);
+                            }
+                        }
+                    }
                 });
             });
 
@@ -208,7 +227,7 @@ if ("HypeTextPath" in window === false) {
                 attributes: true,
                 subtree: true,
                 attributeOldValue: true,
-                attributeFilter: ['data-text-path', 'data-text-content', 'stroke-dashoffset'],
+                attributeFilter: ['data-text-path', 'data-text-content', 'stroke-dashoffset', 'style'],
                 childList: true,
                 characterData: true
             });
@@ -246,7 +265,7 @@ if ("HypeTextPath" in window === false) {
         }
 
         return {
-            version: '1.1.1'
+            version: '1.1.2'
         };
     })();
 }
