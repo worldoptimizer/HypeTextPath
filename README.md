@@ -2,8 +2,7 @@
 
 ![HypeTextPath|690x387](https://playground.maxziebell.de/Hype/TextPath/HypeTextPath.jpg?)
 
-A small custom tailored extension to animate text along a path in Tumult Hype.
-
+A small custom-tailored extension to animate text along a path in Tumult Hype.
 
 ## How to Use the Hype TextPath Extension
 
@@ -15,19 +14,18 @@ The Hype TextPath Extension allows you to animate text along a path in Tumult Hy
 #### 1. Download the Extension
 You can include the Hype TextPath Extension by either linking it via CDN or downloading it from the GitHub repository.
 
-**Content Delivery Network (CDN)**
-
-Latest version can be linked into your project using the following in the head section of your project:
+##### Option A: Content Delivery Network (CDN)
+The latest version can be linked into your project using the following in the head section of your project:
 
 ```html
 <script src="https://cdn.jsdelivr.net/gh/worldoptimizer/HypeTextPath/HypeTextPath.min.js"></script>
 ```
 
-Optionally you can also link a SRI version or specific releases. Read more about that on the JsDelivr (CDN) page for this extension at [https://www.jsdelivr.com/package/gh/worldoptimizer/HypeTextPath](https://www.jsdelivr.com/package/gh/worldoptimizer/HypeTextPath)
+Optionally, you can also link a specific release or a version with SRI. For more details, visit the [JsDelivr (CDN) page for this extension](https://www.jsdelivr.com/package/gh/worldoptimizer/HypeTextPath).
 
-Learn how to use the latest extension version and how to combine extensions into one file at [https://github.com/worldoptimizer/HypeCookBook/wiki/Including-external-files-and-Hype-extensions](https://github.com/worldoptimizer/HypeCookBook/wiki/Including-external-files-and-Hype-extensions)
+Learn how to use the latest extension version and how to combine extensions into one file at [HypeCookBook - Including external files and Hype extensions](https://github.com/worldoptimizer/HypeCookBook/wiki/Including-external-files-and-Hype-extensions).
 
-**Option B: Download from GitHub**
+##### Option B: Download from GitHub
 1. Go to the [Hype TextPath Extension GitHub Repository](https://github.com/worldoptimizer/HypeTextPath).
 2. Download the latest version of `HypeTextPath.js` or `HypeTextPath.min.js`.
 3. Place the downloaded `HypeTextPath.js` or `HypeTextPath.min.js` file in your Hype project's `resources` folder.
@@ -71,3 +69,15 @@ You are now set up to use the Hype TextPath Extension in your Tumult Hype projec
 
 Happy animating!
 
+### Additional Resources
+
+#### Content Delivery Network (CDN)
+The latest version of the Hype TextPath Extension can be linked into your project using the following script in the head section of your project:
+
+```html
+<script src="https://cdn.jsdelivr.net/gh/worldoptimizer/HypeTextPath/HypeTextPath.min.js"></script>
+```
+
+Optionally, you can also link a specific release or a version with SRI. For more details, visit the [JsDelivr (CDN) page for this extension](https://www.jsdelivr.com/package/gh/worldoptimizer/HypeTextPath).
+
+Learn how to use the latest extension version and how to combine extensions into one file at [HypeCookBook - Including external files and Hype extensions](https://github.com/worldoptimizer/HypeCookBook/wiki/Including-external-files-and-Hype-extensions).
