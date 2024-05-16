@@ -4,7 +4,7 @@
 
 A small custom-tailored extension to animate text along a path in Tumult Hype.
 
-## How to Use the Hype TextPath Extension
+## How to Use the Hype Text Path 
 
 ### Introduction
 The Hype TextPath Extension allows you to animate text along a path in Tumult Hype. This guide will help you set it up in your project, ensuring smooth integration and usage.
