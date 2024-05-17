@@ -19,6 +19,7 @@
  * 1.1.1 Added cleanup function for existing text paths in IDE
  * 1.1.2 Added global observer for style changes
  * 1.1.3 Improved cleanup to avoid text duplication and fixed attribute handling
+ * 1.1.4 Added fontWeight, fontStyle, textDecoration to transferStyles as suggested by Jonathan
  */
 
 // Ensure the extension isn't redefined
@@ -107,7 +108,7 @@ if ("HypeTextPath" in window === false) {
         }
 
         function transferStyles(sourceElm, targetElm) {
-            var keys = ['fontFamily', 'fontSize', ['color', 'fill'], 'letterSpacing', 'wordSpacing'];
+            var keys = ['fontFamily', 'fontSize', ['color', 'fill'], 'letterSpacing', 'wordSpacing', 'fontWeight', 'fontStyle', 'textDecoration'];
             keys.forEach(function (key) {
                 var isArray = Array.isArray(key);
                 var hKey = isArray ? key[0] : key;
