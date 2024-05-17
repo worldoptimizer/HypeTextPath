@@ -267,7 +267,7 @@ if ("HypeTextPath" in window === false) {
         }
 
         return {
-            version: '1.1.3'
+            version: '1.1.4'
         };
     })();
 }
