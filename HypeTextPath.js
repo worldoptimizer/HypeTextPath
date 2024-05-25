@@ -1,5 +1,5 @@
 /*!
- * Hype TextPath Extension
+ * Hype TextPath Extension v1.1.4
  * Copyright (2019-2024) Max Ziebell, (https://maxziebell.de). MIT-license
  */
 
