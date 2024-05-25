@@ -1,5 +1,5 @@
 /*!
- * Hype TextPath Extension v1.1.4
+ * Hype TextPath Extension v1.1.5
  * Copyright (2019-2024) Max Ziebell, (https://maxziebell.de). MIT-license
  */
 
@@ -20,6 +20,7 @@
  * 1.1.2 Added global observer for style changes
  * 1.1.3 Improved cleanup to avoid text duplication and fixed attribute handling
  * 1.1.4 Added fontWeight, fontStyle, textDecoration to transferStyles as suggested by Jonathan
+ * 1.1.5 Minor cleanup of release and versioning
  */
 
 // Ensure the extension isn't redefined
@@ -267,7 +268,7 @@ if ("HypeTextPath" in window === false) {
         }
 
         return {
-            version: '1.1.4'
+            version: '1.1.5'
         };
     })();
 }
